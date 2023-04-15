@@ -10,92 +10,10 @@
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
   <style>
-    :root {
-  --bg: #3C465C;
-  --primary: #78FFCD;
-  --solid: #fff;
-  --btn-w: 10em;
-  --dot-w: calc(var(--btn-w)*.2);
-  --tr-X: calc(var(--btn-w) - var(--dot-w));
-}
-* {box-sizing: border-box;}
-*:before, *:after {box-sizing: border-box;}
 
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: wrap;
-  background: var(--bg);
-  font-size: 20px;
-  font-family: 'Titillium Web', sans-serif;
-}
-h1 {
-  color: var(--solid);
-  font-size: 2.5rem;
-  margin-top: 6rem; 
-}
-.btn {
-  position: relative;
-  margin: 0 auto;
-  width: var(--btn-w);
-  color: var(--primary);
-  border: .15em solid var(--primary);
-  border-radius: 5em;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.3em;
-  line-height: 2em;
-  cursor: pointer;  
-}
-.dot {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: var(--dot-w);
-  height: 100%;
-  border-radius: 100%;
-  transition: all 300ms ease;
-  display: none;
-}
-.dot:after {
-  content: '';
-  position: absolute;
-  left: calc(50% - .4em);
-  top: -.4em;
-  height: .8em;
-  width: .8em;
-  background: var(--primary);
-  border-radius: 1em;
-  border: .25em solid var(--solid);
-  box-shadow: 0 0 .7em var(--solid),
-        0 0 2em var(--primary);
-}
-.btn:hover .dot,
-.btn:focus .dot {
-  animation: atom 2s infinite linear;
-  display: block;
-}
-@keyframes atom {
-  0% {transform: translateX(0) rotate(0);}
-  30%{transform: translateX(var(--tr-X)) rotate(0);}
-  50% {transform: translateX(var(--tr-X)) rotate(180deg);}
-  80% {transform: translateX(0) rotate(180deg);}
-  100% {transform: translateX(0) rotate(360deg);}
-}
-    
-    /* body {
-      color: white;
-      background-color: black;
-    }
 
-    .dark-mode {
-      background-color: white;
-    }
-     */
 
-    
+
   </style>
 </head>
 
@@ -115,7 +33,29 @@ h1 {
             <div class="timeline-content">
               <h5 class="title">January 27</h5>
               <p class="description">
-                충청남도 공주시 유구읍 <strong>극한 시골 동내에서 태났다</strong> | <strong>충청남도 공주시 유구는 섬유 공장으로 유명했습니다.</strong> 지금은 아닙니다.
+                충청남도 공주시 유구읍 <strong>극한 시골 동내에서 태어났다 <br/>
+              유구는 섬유 공장으로 유명했습니다.<br/></strong> 지금은 아닙니다.
+              </p>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
+            <span class="year">2014</span>
+            <div class="timeline-content">
+              <h5 class="title">March</h5>
+              <p class="description">
+                처음으로 C언어를 대학교 강의에서 만났습니다.<br/>
+                덕분에 자퇴 생각을 10번 정도 했습니다.
+              </p>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-icon"><i class="fa fa-rocket"></i></div>
+            <span class="year">2016</span>
+            <div class="timeline-content">
+              <h5 class="title">April</h5>
+              <p class="description">
+                3군 사령부 직할대대인 1101 공병대대 소속으로 <strong>국방의 의무</strong> 시작합니다.
               </p>
             </div>
           </div>
@@ -126,10 +66,3 @@ h1 {
 </body>
 
 </html>
-
-<script>
-  const darkModeButton = document.getElementById('dark-mode-button');
-  darkModeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-</script>
