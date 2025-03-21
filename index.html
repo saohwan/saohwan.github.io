@@ -13,7 +13,136 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
     />
-    <style></style>
+    <style>
+      .project-btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .project-btn:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+      }
+
+      .project-modal .modal-content {
+        border-radius: 15px;
+        border: none;
+      }
+
+      .project-modal .modal-header {
+        background-color: #f8f9fa;
+        border-radius: 15px 15px 0 0;
+        border-bottom: none;
+      }
+
+      .project-modal .modal-body {
+        padding: 25px;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #2c3e50;
+      }
+
+      .project-section {
+        margin-bottom: 15px;
+      }
+
+      .project-section-title {
+        font-weight: bold;
+        color: #34495e;
+        margin-bottom: 5px;
+      }
+
+      .project-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .project-list li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .project-list li:before {
+        content: '•';
+        color: #007bff;
+        position: absolute;
+        left: 0;
+      }
+
+      .nav-tabs .nav-link {
+        border: none;
+        color: #495057;
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 0;
+        border-bottom: 2px solid transparent;
+      }
+
+      .nav-tabs .nav-link.active {
+        color: #007bff;
+        background: none;
+        border-bottom: 2px solid #007bff;
+      }
+
+      .nav-tabs {
+        border-bottom: 1px solid #dee2e6;
+        margin-bottom: 20px;
+      }
+
+      .culture-improvement {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .culture-improvement img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 15px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .culture-improvement-title {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+
+      .culture-improvement-content {
+        color: #34495e;
+        line-height: 1.6;
+      }
+
+      .tab-content {
+        padding-top: 20px;
+      }
+    </style>
   </head>
 
   <body>
@@ -178,11 +307,241 @@
                   연구소에서의 기술적 성장을 바탕으로<br />
                   새로운 도약을 준비합니다. 🌟
                 </p>
+                <button
+                  class="project-btn"
+                  data-toggle="modal"
+                  data-target="#pgmProjectsModal"
+                >
+                  프로젝트 보기
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- PGM Projects Modal -->
+    <div
+      class="modal fade project-modal"
+      id="pgmProjectsModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="pgmProjectsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pgmProjectsModalLabel">
+              PGM 기술 연구소 프로젝트
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-tabs" id="projectTabs" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="main-projects-tab"
+                  data-toggle="tab"
+                  href="#main-projects"
+                  role="tab"
+                >
+                  주요 프로젝트
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="other-projects-tab"
+                  data-toggle="tab"
+                  href="#other-projects"
+                  role="tab"
+                >
+                  기타 프로젝트
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content" id="projectTabsContent">
+              <div
+                class="tab-pane fade show active"
+                id="main-projects"
+                role="tabpanel"
+              >
+                <div class="project-card">
+                  <div class="project-title">
+                    🚀 Django → FastAPI 마이그레이션 프로젝트
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">상황</div>
+                    <p>
+                      기존 Django 기반 웹 애플리케이션의 성능 저하 및 확장성
+                      문제 발생
+                    </p>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">목표</div>
+                    <p>성능 개선과 확장성을 갖춘 경량화된 API 시스템 구축</p>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">실행</div>
+                    <ul class="project-list">
+                      <li>Django REST Framework에서 FastAPI로 전환 구현</li>
+                      <li>
+                        로컬 PC/uvicorn 환경에서 리눅스 서버/Gunicorn 환경으로
+                        마이그레이션
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">결과</div>
+                    <p>
+                      API 응답 속도 30% 향상, 트래픽 부하 30% 감소 달성, 무중단
+                      운영 실현
+                    </p>
+                  </div>
+                </div>
+
+                <div class="project-card">
+                  <div class="project-title">
+                    �� PCB 검사 데이터 분석 API 개발 및 자동화 모니터링 웹 구현
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">상황</div>
+                    <p>PCB 검사 데이터의 효율적인 분석 및 처리 시스템 필요</p>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">목표</div>
+                    <p>
+                      AI 학습 데이터 관리와 사용자 친화적인 웹 애플리케이션 구축
+                    </p>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">실행</div>
+                    <ul class="project-list">
+                      <li>
+                        FastAPI와 Celery를 활용한 대용량 데이터 처리 시스템 구축
+                      </li>
+                      <li>
+                        Next.js와 TypeScript 기반의 직관적인 웹 인터페이스 개발
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">결과</div>
+                    <p>PCB 검사 업체의 브랜드 가치 상승 및 업무 효율성 개선</p>
+                  </div>
+                </div>
+
+                <div class="project-card">
+                  <div class="project-title">
+                    💬 MS Teams 웹훅 API 연동 프로젝트
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">상황</div>
+                    <p>실시간 알림 및 업무 자동화 시스템 필요</p>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">목표</div>
+                    <p>
+                      Teams 연동을 통한 실시간 알림 및 자동화 워크플로우 구축
+                    </p>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">실행</div>
+                    <ul class="project-list">
+                      <li>FastAPI 기반 실시간 알림 서비스 구현</li>
+                      <li>자동화된 이벤트 기반 메시지 전송 시스템 구축</li>
+                    </ul>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">결과</div>
+                    <p>업무 협업 효율성 향상 및 관리 업무 자동화 달성</p>
+                  </div>
+                </div>
+
+                <div class="project-card">
+                  <div class="project-title">📊 Grafana 모니터링 시스템</div>
+                  <div class="project-section">
+                    <div class="project-section-title">상황</div>
+                    <p>
+                      PCB 검사 설비의 디스크 용량 문제로 인한 운영 중단 위험
+                    </p>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">목표</div>
+                    <p>효율적인 모니터링 및 자동 알림 시스템 구축</p>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">실행</div>
+                    <ul class="project-list">
+                      <li>Grafana 기반 실시간 모니터링 대시보드 구축</li>
+                      <li>임계치 기반 자동 알림 시스템 구현</li>
+                    </ul>
+                  </div>
+                  <div class="project-section">
+                    <div class="project-section-title">결과</div>
+                    <p>시스템 가동률 향상 및 선제적 문제 해결 체계 구축</p>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="other-projects" role="tabpanel">
+                <div class="project-card">
+                  <div class="project-title">🔄 개발 문화 개선 프로젝트</div>
+                  <div class="project-section">
+                    <div class="project-section-title">주요 개선사항</div>
+                    <ul class="project-list">
+                      <li>YouTrack 이슈 트래킹 시스템 도입</li>
+                      <li>Github 조직 계정 도입 및 관리</li>
+                      <li>개발 문서화 프로세스 정립</li>
+                      <li>체계적인 이슈 관리 시스템 구축</li>
+                    </ul>
+                  </div>
+                  <div class="culture-improvement">
+                    <div class="culture-improvement-title">
+                      📈 개발 문화 개선 성과
+                    </div>
+                    <p class="culture-improvement-content">
+                      입사 후 개발 문화의 개선이 필요한 부분을 파악하여 팀장님과
+                      협의하였습니다. YouTrack 시스템과 Github 조직 계정을
+                      도입하고, 이슈 트래킹부터 개발 문서화까지 체계적인
+                      프로세스를 구축하여 성공적으로 정착시켰습니다.
+                    </p>
+                    <img
+                      src="css/img.png"
+                      alt="YouTrack GantChart"
+                      class="img-fluid"
+                    />
+                    <img
+                      src="css/img_2.png"
+                      alt="YouTrack Docs"
+                      class="img-fluid"
+                    />
+                     <img
+                      src="css/img_1.png"
+                      alt="Github Organization"
+                      class="img-fluid"
+                    />
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>
